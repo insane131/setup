@@ -1,0 +1,12 @@
+- hosts: test
+  pre_tasks:
+    - name: Welcome
+      debug:
+        msg: "Welcome!"
+
+    - name: users | jay | create group
+      tags: groups,jay,users
+      become: true
+      group:
+        name: jay
+        state: absent
