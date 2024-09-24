@@ -1,4 +1,4 @@
-- hosts: test
+- hosts: workstation
   pre_tasks:
     - name: Welcome
       debug:
