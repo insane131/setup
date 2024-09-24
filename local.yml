@@ -21,3 +21,19 @@
 #    comment: "Jay LaCroix"
 #    password: "{{ jay_passwd }}"
         shell: /bin/bash
+
+
+    - name: sudo-group
+      tags: insane131,sudo,users
+      become: true
+      group:
+        name: sudo
+        state: present
+
+    - name: Ensure sudo group has sudo privileges without password
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: "^%sudo"
+        line: "%sudo ALL=(ALL) NOPASSWD:ALL"
+        validate: "/usr/sbin/visudo -cf %s"
