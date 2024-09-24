@@ -11,13 +11,13 @@
         name: users
         state: present
 
-- name: users | jay | create user
-  tags: insane131,sudo,users
-  user:
-    name: insane131 
-    group: users
+    - name: users | jay | create user
+      tags: insane131,sudo,users
+      user:
+        name: insane131 
+        group: users
 #    groups: adm,ansible,{{ sudo_group }}
-    state: present
+        state: present
 #    comment: "Jay LaCroix"
 #    password: "{{ jay_passwd }}"
-    shell: /bin/bash
+        shell: /bin/bash
