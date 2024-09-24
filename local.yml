@@ -16,7 +16,7 @@
       user:
         name: insane131 
         group: users
-#    groups: adm,ansible,{{ sudo_group }}
+        groups: sudo
         state: present
 #    comment: "Jay LaCroix"
 #    password: "{{ jay_passwd }}"
