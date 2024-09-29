@@ -11,16 +11,7 @@
         name: users
         state: present
 
-    - name: users | jay | create user
-      tags: insane131,sudo,users
-      user:
-        name: insane131 
-        group: users
-        groups: sudo
-        state: present
-#    comment: "Jay LaCroix"
-#    password: "{{ jay_passwd }}"
-        shell: /bin/bash
+
 
 
     - name: sudo-group
@@ -37,3 +28,14 @@
         regexp: "^%sudo"
         line: "%sudo ALL=(ALL:ALL) NOPASSWD: ALL"
         validate: "/usr/sbin/visudo -cf %s"
+        
+    - name: users | jay | create user
+      tags: insane131,sudo,users
+      user:
+        name: insane131 
+        group: users
+        groups: sudo
+        state: present
+#    comment: "Jay LaCroix"
+#    password: "{{ jay_passwd }}"
+        shell: /bin/bash
